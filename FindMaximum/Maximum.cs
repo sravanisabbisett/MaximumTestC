@@ -41,5 +41,22 @@ namespace FindMaximum
                 maximum = z;
             return maximum;
         }
+
+        /// <summary>
+        /// Maximums the string.
+        /// </summary>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <param name="z">The z.</param>
+        /// <returns></returns>
+        public string MaximumString(string x, string y, string z)
+        {
+            string maximum = x;
+            if (y.CompareTo(maximum) > 0)
+                maximum = y;
+            if (z.CompareTo(maximum) > 0)
+                maximum = z;
+            return maximum;
+        }
     }
 }

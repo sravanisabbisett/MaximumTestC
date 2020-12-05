@@ -75,5 +75,34 @@ namespace MaximumTest
             Assert.AreEqual(5.5, maxResult);
         }
 
+        /// <summary>
+        /// Givens the maximum string as first parameter should return maximum string.
+        /// </summary>
+        [TestMethod]
+        public void GivenMaximumString_AsFirstParameter_shouldReturnMaximumString()
+        {
+            string maxResult = maximum.MaximumString("peach", "apple", "banana");
+            Assert.AreEqual("peach", maxResult);
+        }
+
+        /// <summary>
+        /// Givens the maximum string as secondparameter should return maximum string.
+        /// </summary>
+        [TestMethod]
+        public void GivenMaximumString_AsSecondparameter_ShouldReturnMaximumString()
+        {
+            string maxResult = maximum.MaximumString("apple", "peach", "banana");
+            Assert.AreEqual("peach", maxResult);
+        }
+
+        /// <summary>
+        /// Givens the maximum string as THRD parameter should return maximum string.
+        /// </summary>
+        [TestMethod]
+        public void GivenMaximumString_AsThrdParameter_ShouldReturnMaximumString()
+        {
+            string maxResult = maximum.MaximumString("banana", "apple", "peach");
+            Assert.AreEqual("peach", maxResult);
+        }
     }
 }
