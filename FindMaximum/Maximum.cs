@@ -41,12 +41,30 @@ namespace FindMaximum
             /// </summary>
             /// <param name="values"></param>
             /// <returns></returns>
-            public T MaxValue(params T[] values)
+            public T MaxValueInArray(params T[] values)
             {
                 T[] sortedArray = Sort(this.array);
                 return sortedArray[sortedArray.Length - 1];
             }
 
+            /// <summary>
+            /// Return max value
+            /// </summary>
+            /// <returns></returns>
+            public T MaxValue()
+            {
+                var max = MaxValueInArray(this.array);
+                return max;
+            }
+
+            /// <summary>
+            /// prints the maximum value
+            /// </summary>
+            public void PrintMaxValue()
+            {
+                var max = MaxValueInArray(this.array);
+                Console.WriteLine("Maximum value is" + max);
+            }
         }
 
     }   
