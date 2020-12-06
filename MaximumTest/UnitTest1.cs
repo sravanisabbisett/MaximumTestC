@@ -7,20 +7,13 @@ namespace MaximumTest
     [TestClass]
     public class UnitTest1
     {
-        Maximum maximum;
-
-        public UnitTest1()
-        {
-            maximum = new Maximum();
-        }
-
         /// <summary>
         /// Givens the maximum integer as first parameter should return maximum.
         /// </summary>
         [TestMethod]
         public void GivenMaximumInteger_AsFirstParameterShouldReturnMaximum()
         {
-            int maxResult = maximum.maximumInteger(7, 4, 6);
+            int maxResult = new Maximum.GenricMaximum<int>(7, 4, 6).MaxMethod();
             Assert.AreEqual(7, maxResult);
         }
 
@@ -30,7 +23,7 @@ namespace MaximumTest
         [TestMethod]
         public void GivenMaximumInteger_AsSecondParameter_ShouldReturnMaximimInteger()
         {
-            int maxResult = maximum.maximumInteger(4, 7, 6);
+            int maxResult = new Maximum.GenricMaximum<int>(4, 7, 6).MaxMethod();
             Assert.AreEqual(7, maxResult);
         }
 
@@ -40,7 +33,7 @@ namespace MaximumTest
         [TestMethod]
         public void GivenMaximimInteger_AsThirdParameter_ShouldReturnMaximumResult()
         {
-            int maxResult = maximum.maximumInteger(4, 6, 7);
+            int maxResult = new Maximum.GenricMaximum<int>(4, 6, 7).MaxMethod();
             Assert.AreEqual(7, maxResult);
         }
 
@@ -50,7 +43,7 @@ namespace MaximumTest
         [TestMethod]
         public void GivenMaximumFloatAsFirstParameter_ShouldReturnMaximimFloat()
         {
-            float maxResult = maximum.MaximumFloat(5.5f, 2.2f, 4.4f);
+            float maxResult = new Maximum.GenricMaximum<float>(5.5f, 2.2f, 4.4f).MaxMethod();
             Assert.AreEqual(5.5, maxResult);
         }
 
@@ -60,9 +53,9 @@ namespace MaximumTest
         [TestMethod]
         public void GivenMaximumfloat_AsSecondParameter_ShouldReturnMaximumFloat()
         {
-            float maxResult = maximum.MaximumFloat(2.2f, 5.5f, 4.4f);
+            float maxResult = new Maximum.GenricMaximum<float>(2.2f, 5.5f, 4.4f).MaxMethod();
             Assert.AreEqual(5.5, maxResult);
-
+            
         }
 
         /// <summary>
@@ -71,7 +64,7 @@ namespace MaximumTest
         [TestMethod]
         public void GivenMaximumFloat_AsThirdParameter_ShouldReturnMaximumFloat()
         {
-            float maxResult = maximum.MaximumFloat(2.2f, 4.4f, 5.5f);
+            float maxResult = new Maximum.GenricMaximum<float>(2.2f, 4.4f, 5.5f).MaxMethod();
             Assert.AreEqual(5.5, maxResult);
         }
 
@@ -81,7 +74,7 @@ namespace MaximumTest
         [TestMethod]
         public void GivenMaximumString_AsFirstParameter_shouldReturnMaximumString()
         {
-            string maxResult = maximum.MaximumString("peach", "apple", "banana");
+            string maxResult = new Maximum.GenricMaximum<string>("peach", "apple", "banana").MaxMethod();
             Assert.AreEqual("peach", maxResult);
         }
 
@@ -91,7 +84,7 @@ namespace MaximumTest
         [TestMethod]
         public void GivenMaximumString_AsSecondparameter_ShouldReturnMaximumString()
         {
-            string maxResult = maximum.MaximumString("apple", "peach", "banana");
+            string maxResult =new Maximum.GenricMaximum<string>("apple", "peach", "banana").MaxMethod();
             Assert.AreEqual("peach", maxResult);
         }
 
@@ -101,7 +94,7 @@ namespace MaximumTest
         [TestMethod]
         public void GivenMaximumString_AsThrdParameter_ShouldReturnMaximumString()
         {
-            string maxResult = maximum.MaximumString("banana", "apple", "peach");
+            string maxResult =new Maximum.GenricMaximum<string>("banana", "apple", "peach").MaxMethod();
             Assert.AreEqual("peach", maxResult);
         }
     }
