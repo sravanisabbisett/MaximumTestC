@@ -13,47 +13,41 @@ namespace FindMaximum
         /// <typeparam name="T"></typeparam>
         public class GenricMaximum<T> where T : IComparable
         {
-            public T x, y, z;
+            public T[] array;
             /// <summary>
             /// Initializes a new instance of the <see cref="GenricMaximum{T}"/> class.
             /// </summary>
             /// <param name="firstValue">The first value.</param>
             /// <param name="secondValue">The second value.</param>
             /// <param name="thirdValue">The third value.</param>
-            public GenricMaximum(T x, T y, T z)
+            public GenricMaximum(T[] array)
             {
-                this.x = x;
-                this.y = y;
-                this.z = z;
+                this.array = array;
             }
+            
             /// <summary>
-            /// Logic for finding Maximum value.
+            /// Sort the elements in an array
             /// </summary>
-            /// <param name="firstValue">The first value.</param>
-            /// <param name="secondValue">The second value.</param>
-            /// <param name="thirdValue">The third value.</param>
+            /// <param name="values"></param>
             /// <returns></returns>
-            /// <exception cref="Exception">All three values are same</exception>
-            public static T MaxValue(T x, T y, T z)
+            public T[] Sort(T[] values)
             {
-                T maximum = x;
-                if (y.CompareTo(maximum) > 0)
-                    maximum = y;
-                if (z.CompareTo(maximum) > 0)
-                    maximum = z;
-                return maximum;
-
+                Array.Sort(values);
+                return values;
+            }
+            
+            /// <summary>
+            /// return the maximum value
+            /// </summary>
+            /// <param name="values"></param>
+            /// <returns></returns>
+            public T MaxValue(params T[] values)
+            {
+                T[] sortedArray = Sort(this.array);
+                return sortedArray[sortedArray.Length - 1];
             }
 
-
-            /// Returns maximum value
-            public T MaxMethod()
-            {
-                T max = GenricMaximum<T>.MaxValue(this.x, this.y, this.z);
-                return max;
-            }
         }
-
 
     }   
 }

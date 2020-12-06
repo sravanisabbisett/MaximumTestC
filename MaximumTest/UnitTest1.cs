@@ -13,8 +13,10 @@ namespace MaximumTest
         [TestMethod]
         public void GivenMaximumInteger_AsFirstParameterShouldReturnMaximum()
         {
-            int maxResult = new Maximum.GenricMaximum<int>(7, 4, 6).MaxMethod();
-            Assert.AreEqual(7, maxResult);
+            int[] intArray = { 7, 4, 6 };
+            Maximum.GenricMaximum<int> maxResult = new Maximum.GenricMaximum<int>(intArray);
+            int actual = maxResult.MaxValue();
+            Assert.AreEqual(7, actual);
         }
 
         /// <summary>
@@ -23,8 +25,10 @@ namespace MaximumTest
         [TestMethod]
         public void GivenMaximumInteger_AsSecondParameter_ShouldReturnMaximimInteger()
         {
-            int maxResult = new Maximum.GenricMaximum<int>(4, 7, 6).MaxMethod();
-            Assert.AreEqual(7, maxResult);
+            int[] intArray = {4,7,6};
+            Maximum.GenricMaximum<int> maxResult = new Maximum.GenricMaximum<int>(intArray);
+            int actual = maxResult.MaxValue();
+            Assert.AreEqual(7, actual);
         }
 
         /// <summary>
@@ -33,18 +37,30 @@ namespace MaximumTest
         [TestMethod]
         public void GivenMaximimInteger_AsThirdParameter_ShouldReturnMaximumResult()
         {
-            int maxResult = new Maximum.GenricMaximum<int>(4, 6, 7).MaxMethod();
-            Assert.AreEqual(7, maxResult);
+            int[] intArray = { 4, 6, 7 };
+            Maximum.GenricMaximum<int> maxResult = new Maximum.GenricMaximum<int>(intArray);
+            int actual = maxResult.MaxValue();
+            Assert.AreEqual(7, actual);
         }
 
+        [TestMethod]
+        public void GivenMoreThan3Elements_ShouldReturn_MaximumInteger()
+        {
+            int[] intArray = { 4, 6, 7, 8, 2 ,20};
+            Maximum.GenricMaximum<int> maxResult = new Maximum.GenricMaximum<int>(intArray);
+            int actual = maxResult.MaxValue();
+            Assert.AreEqual(20, actual);
+        }
         /// <summary>
         /// Givens the maximum float as first parameter should return maximim float.
         /// </summary>
         [TestMethod]
         public void GivenMaximumFloatAsFirstParameter_ShouldReturnMaximimFloat()
         {
-            float maxResult = new Maximum.GenricMaximum<float>(5.5f, 2.2f, 4.4f).MaxMethod();
-            Assert.AreEqual(5.5, maxResult);
+            float[] floatarray = { 5.5f, 2.2f, 4.4f };
+            Maximum.GenricMaximum<float> maxResult = new Maximum.GenricMaximum<float>(floatarray);
+            float actual = maxResult.MaxValue();
+            Assert.AreEqual(5.5, actual);
         }
 
         /// <summary>
@@ -53,9 +69,11 @@ namespace MaximumTest
         [TestMethod]
         public void GivenMaximumfloat_AsSecondParameter_ShouldReturnMaximumFloat()
         {
-            float maxResult = new Maximum.GenricMaximum<float>(2.2f, 5.5f, 4.4f).MaxMethod();
-            Assert.AreEqual(5.5, maxResult);
-            
+            float[] floatArray = { 2.2f, 5.5f, 4.4f };
+            Maximum.GenricMaximum<float> maxResult = new Maximum.GenricMaximum<float>(floatArray);
+            float actual = maxResult.MaxValue();
+            Assert.AreEqual(5.5, actual);
+
         }
 
         /// <summary>
@@ -64,8 +82,19 @@ namespace MaximumTest
         [TestMethod]
         public void GivenMaximumFloat_AsThirdParameter_ShouldReturnMaximumFloat()
         {
-            float maxResult = new Maximum.GenricMaximum<float>(2.2f, 4.4f, 5.5f).MaxMethod();
-            Assert.AreEqual(5.5, maxResult);
+            float[] floatArray = { 2.2f, 4.4f, 5.5f };
+            Maximum.GenricMaximum<float> maxResult = new Maximum.GenricMaximum<float>(floatArray);
+            float actual = maxResult.MaxValue();
+            Assert.AreEqual(5.5, actual);
+        }
+
+        [TestMethod]
+        public void GivenFloatArrray_ShouldReturnMaximumFloat()
+        {
+            float[] floatArray = { 2.2f, 4.4f, 9.9f ,5.5f};
+            Maximum.GenricMaximum<float> maxResult = new Maximum.GenricMaximum<float>(floatArray);
+            float actual = maxResult.MaxValue();
+            Assert.AreEqual(9.9f, actual);
         }
 
         /// <summary>
@@ -74,8 +103,10 @@ namespace MaximumTest
         [TestMethod]
         public void GivenMaximumString_AsFirstParameter_shouldReturnMaximumString()
         {
-            string maxResult = new Maximum.GenricMaximum<string>("peach", "apple", "banana").MaxMethod();
-            Assert.AreEqual("peach", maxResult);
+            string[]  stringArray = { "peach", "apple", "banana" };
+            Maximum.GenricMaximum<string> maxResult = new Maximum.GenricMaximum<string>(stringArray);
+            string actual = maxResult.MaxValue();
+            Assert.AreEqual("peach", actual);
         }
 
         /// <summary>
@@ -84,8 +115,10 @@ namespace MaximumTest
         [TestMethod]
         public void GivenMaximumString_AsSecondparameter_ShouldReturnMaximumString()
         {
-            string maxResult =new Maximum.GenricMaximum<string>("apple", "peach", "banana").MaxMethod();
-            Assert.AreEqual("peach", maxResult);
+            string[] stringArray = { "apple", "peach", "banana" };
+            Maximum.GenricMaximum<string> maxResult = new Maximum.GenricMaximum<string>(stringArray);
+            string actual = maxResult.MaxValue();
+            Assert.AreEqual("peach", actual);
         }
 
         /// <summary>
@@ -94,8 +127,19 @@ namespace MaximumTest
         [TestMethod]
         public void GivenMaximumString_AsThrdParameter_ShouldReturnMaximumString()
         {
-            string maxResult =new Maximum.GenricMaximum<string>("banana", "apple", "peach").MaxMethod();
-            Assert.AreEqual("peach", maxResult);
+            string[] stringArray = { "banana", "apple", "peach" };
+            Maximum.GenricMaximum<string> maxResult = new Maximum.GenricMaximum<string>(stringArray);
+            string actual = maxResult.MaxValue();
+            Assert.AreEqual("peach", actual);
+        }
+
+        [TestMethod]
+        public void GivenStringArray_ShouldReturnMaximumString()
+        {
+            string[] stringArray = { "banana", "apple", "peach" ,"kiwi"};
+            Maximum.GenricMaximum<string> maxResult = new Maximum.GenricMaximum<string>(stringArray);
+            string actual = maxResult.MaxValue();
+            Assert.AreEqual("peach", actual);
         }
     }
 }
